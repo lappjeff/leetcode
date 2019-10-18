@@ -21,6 +21,30 @@ const twoSum = (nums, target) => {
 	// 		}
 	// 	}
 	// }
+
+	// Two pass O(n) solution using hashtable
+	let pairs = {};
+	for (let i = 0; i < nums.length; i++) {
+		number = nums[i];
+		if (!pairs[number]) {
+			pairs[number] = [i];
+		} else {
+			pairs[number].push(i);
+		}
+	}
+
+	for (const key of Object.keys(pairs)) {
+		let searchKey = target - key;
+		let dictValue = pairs[searchKey];
+
+		if (dictValue) {
+			if (parseInt(key) + parseInt(searchKey) === target) {
+				return [pairs[searchKey][searchItemLength - 1], pairs[key][0]];
+			} else if (dictValue.length > 1 && dictValue + dictValue === target) {
+				return [dictValue[0], dictValue[-1]];
+			}
+		}
+	}
 };
 
-console.log(twoSum([2, 5, 5, 11], 10));
+console.log(twoSum([3, 3], 6));
