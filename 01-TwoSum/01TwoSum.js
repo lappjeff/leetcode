@@ -38,10 +38,11 @@ const twoSum = (nums, target) => {
 		let dictValue = pairs[searchKey];
 
 		if (dictValue) {
+			let searchItemLength = dictValue.length;
 			if (parseInt(key) + parseInt(searchKey) === target) {
-				return [pairs[searchKey][searchItemLength - 1], pairs[key][0]];
-			} else if (dictValue.length > 1 && dictValue + dictValue === target) {
-				return [dictValue[0], dictValue[-1]];
+				indexOne = pairs[searchKey][searchItemLength - 1];
+				indexTwo = pairs[key][0];
+				return [indexOne, indexTwo];
 			}
 		}
 	}
