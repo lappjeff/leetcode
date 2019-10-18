@@ -11,16 +11,16 @@
 
 const twoSum = (nums, target) => {
 	// nested for loop
-	for (let i = 0; i < nums.length - 1; i++) {
-		for (let j = 0; j < nums.length - 1; i++) {
-			let numI = nums[i];
-			let numJ = nums[j];
-			console.log(`Adding ${numI} and ${numJ} equals ${numI + numJ}`);
-			if (numI + numJ === target) {
-				return [j, i];
-			}
-		}
-	}
+	// Brute force, O(n**) solution
+	// for (let i = 0; i < nums.length; i++) {
+	// 	for (let j = i + 1; j < nums.length; j++) {
+	// 		let numI = nums[i];
+	// 		let numJ = nums[j];
+	// 		if (numI + numJ === target) {
+	// 			return [i, j];
+	// 		}
+	// 	}
+	// }
 };
 
-console.log(twoSum([2, 7, 5, 11], 9));
+console.log(twoSum([2, 5, 5, 11], 10));
