@@ -1,2 +1,3 @@
 # leetcode
-Leetcode problems - 1 a day? Maybe.
+Running through leetcode problems, in order. 
+Shooting for, optimally, 1-3 a week, done in JS
